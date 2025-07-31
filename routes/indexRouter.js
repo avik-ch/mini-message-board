@@ -18,4 +18,4 @@ indexRouter.get("/", (req, res) => {
   res.render("index", { messages });
 });
 
-module.exports = indexRouter;
+module.exports = { indexRouter, messages };
