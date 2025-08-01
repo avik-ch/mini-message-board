@@ -21,3 +21,13 @@ app.listen(PORT, () => {
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
 app.use("/message", messageRouter);
+
+app.use((req, res) => {
+  res.status(404).render("404");
+});
+
+// error
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(err.statusCode || 500).send(err.message)
+});
