@@ -26,4 +26,4 @@ async function addMessage(username, message) {
   return true;
 }
 
-module.exports = { getAllMessages, addMessage };
+module.exports = { getAllMessages, getMessageById, addMessage };

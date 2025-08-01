@@ -1,8 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("node:path");
-const {indexRouter} = require("./routes/indexRouter");
+const { indexRouter } = require("./routes/indexRouter");
 const newMessageRouter = require("./routes/newMessageRouter");
+const messageRouter = require("./routes/messageRouter");
 
 const app = express();
 app.set("views", path.join(__dirname, "views"));
@@ -19,3 +20,4 @@ app.listen(PORT, () => {
 // routes
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
+app.use("/message", messageRouter);

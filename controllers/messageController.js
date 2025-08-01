@@ -3,7 +3,7 @@ const db = require("../db");
 async function getMessageById(req, res) {
   const { messageId } = req.params;
 
-  const message = await db.getMessage(Number(messageId));
+  const message = await db.getMessageById(Number(messageId));
 
   if (!message) {
     res.status(404).send("Message not found");

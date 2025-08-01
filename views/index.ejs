@@ -7,10 +7,14 @@
   </head>
   <body>
     <% messages.forEach((message) => { %>
-        <p><%= message.text %></p>
-        <p><%= message.user %></p>
-        <p><%= message.added %></p>
+      <p><%= message.text %></p>
+      <p><%= message.user %></p>
+      <p><%= message.added %></p>
+      <a href="/message/<%= message.id %>">
+        See message details
+      </a>
     <% }) %>
+    <br>
     <a href="/new"><button>Add to the conversation</button></a>
   </body>
 </html>
